@@ -5,19 +5,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 1f;
+    private Vector3 _targetPosition;
+    private bool _canRun;
     [Header("Lerp")] 
         public Transform target;
         public float lerpSpeed = 1f;
-    public float speed = 1f;
-    public string tagToCheckEnemy = "Enemy";
-    private Vector3 _targetPosition;
-    private bool _canRun;
-
-    private void Start()
-    {
-        _canRun = true;
-    }
-
+    [Header("Scenes")] 
+        public GameObject sceneFinal;
+    [Header("Tags")]
+        public string tagToCheckEnemy = "Enemy";
+        public string tagToCheckFinishLine = "FinishLine";
+    
     private void Update()
     {
         if (!_canRun)
@@ -35,7 +34,26 @@ public class PlayerController : MonoBehaviour
     {
         if (other.transform.CompareTag(tagToCheckEnemy))
         {
-            _canRun = false;
+            GameFinal();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag(tagToCheckFinishLine))
+        {
+            GameFinal();
+        }
+    }
+
+    private void GameFinal()
+    {
+        _canRun = false;
+        sceneFinal.SetActive(true);
+    }
+
+    public void StartToRun()
+    {
+        _canRun = true;
     }
 }

@@ -9,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/LoadSceneHelper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +84,8 @@
       <workItem from="1678135633734" duration="1707000" />
       <workItem from="1678144921919" duration="1847000" />
       <workItem from="1678214603181" duration="9000" />
-      <workItem from="1678218087354" duration="1825000" />
+      <workItem from="1678218087354" duration="2119000" />
+      <workItem from="1678233322787" duration="1770000" />
     </task>
     <servers />
   </component>
