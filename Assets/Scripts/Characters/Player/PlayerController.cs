@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Singleton;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public float speed = 1f;
     private Vector3 _targetPosition;
     private bool _canRun;
+    private float _currentSpeed;
     [Header("Lerp")] 
         public Transform target;
         public float lerpSpeed = 1f;
@@ -16,7 +18,11 @@ public class PlayerController : MonoBehaviour
     [Header("Tags")]
         public string tagToCheckEnemy = "Enemy";
         public string tagToCheckFinishLine = "FinishLine";
-    
+
+    private void Start()
+    {
+        ResetSpeed();
+    }
     private void Update()
     {
         if (!_canRun)
@@ -56,4 +62,18 @@ public class PlayerController : MonoBehaviour
     {
         _canRun = true;
     }
+
+    #region Power Up
+
+        public void PowerUpSpeed(float powerUpSpeed)
+        {
+            _currentSpeed = powerUpSpeed;
+        }
+
+        public void ResetSpeed()
+        {
+            _currentSpeed = speed;
+        }
+
+    #endregion
 }
