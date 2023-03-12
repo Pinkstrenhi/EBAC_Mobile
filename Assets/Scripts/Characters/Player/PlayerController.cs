@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Singleton;
+using TMPro;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -10,6 +11,12 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _targetPosition;
     private bool _canRun;
     private float _currentSpeed;
+    [Header("Power Up")] 
+        public bool invincible;
+        public TextMeshProUGUI powerUpState;
+        public Material powerUpMaterialBase;
+        public Material powerUpMaterialSpeed;
+        public Material powerUpMaterialInvincible;
     [Header("Lerp")] 
         public Transform target;
         public float lerpSpeed = 1f;
@@ -21,6 +28,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        powerUpMaterialBase = gameObject.GetComponent<Renderer>().material;
         ResetSpeed();
     }
     private void Update()
@@ -40,6 +48,10 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.CompareTag(tagToCheckEnemy))
         {
+            if (invincible)
+            {
+                return;
+            }
             GameFinal();
         }
     }
@@ -48,6 +60,10 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.CompareTag(tagToCheckFinishLine))
         {
+            if (invincible)
+            {
+                return;
+            }
             GameFinal();
         }
     }
@@ -65,6 +81,24 @@ public class PlayerController : Singleton<PlayerController>
 
     #region Power Up
 
+        public void SetPowerUpState(string powerUpStateText)
+        {
+            powerUpState.text = powerUpStateText;
+        }
+
+        public void SetPowerUpMaterialSpeed()
+        {
+            gameObject.GetComponent<Renderer>().material = powerUpMaterialSpeed;
+        }
+        public void SetPowerUpMaterialInvincible()
+        {
+            gameObject.GetComponent<Renderer>().material = powerUpMaterialInvincible;
+        }
+
+        public void ResetPowerUpMaterial()
+        {
+            gameObject.GetComponent<Renderer>().material = powerUpMaterialBase;
+        }
         public void PowerUpSpeed(float powerUpSpeed)
         {
             _currentSpeed = powerUpSpeed;
@@ -73,6 +107,11 @@ public class PlayerController : Singleton<PlayerController>
         public void ResetSpeed()
         {
             _currentSpeed = speed;
+        }
+
+        public void SetInvincible(bool powerUpInvincible)
+        {
+            invincible = powerUpInvincible;
         }
 
     #endregion
