@@ -8,8 +8,8 @@ public class PowerUpInvincible : PowerUpBase
     {
         base.PowerUpStart();
         PlayerController.Instance.SetPowerUpState("Invincible");
-        PlayerController.Instance.SetPowerUpMaterialInvincible();
-        PlayerController.Instance.SetInvincible(true);
+        PlayerController.Instance.SetPowerUpMaterial(PlayerController.Instance.powerUpMaterialInvincible);
+        PlayerController.Instance.PowerUpInvincible(true);
     }
 
     protected override void PowerUpEnd()
@@ -17,6 +17,6 @@ public class PowerUpInvincible : PowerUpBase
         base.PowerUpEnd();
         PlayerController.Instance.SetPowerUpState("");
         PlayerController.Instance.ResetPowerUpMaterial();
-        PlayerController.Instance.SetInvincible(false);
+        PlayerController.Instance.PowerUpInvincible(false);
     }
 }

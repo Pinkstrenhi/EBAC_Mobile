@@ -10,7 +10,7 @@ public class PowerUpSpeed : PowerUpBase
     {
         base.PowerUpStart();
         PlayerController.Instance.SetPowerUpState("Speed");
-        PlayerController.Instance.SetPowerUpMaterialSpeed();
+        PlayerController.Instance.SetPowerUpMaterial(PlayerController.Instance.powerUpMaterialSpeed);
         PlayerController.Instance.PowerUpSpeed(amountToSpeed);
     }
 
