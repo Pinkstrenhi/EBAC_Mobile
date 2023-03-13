@@ -15,8 +15,6 @@ public class PowerUpInvincible : PowerUpBase
     protected override void PowerUpEnd()
     {
         base.PowerUpEnd();
-        PlayerController.Instance.SetPowerUpState("");
-        PlayerController.Instance.ResetPowerUpMaterial();
         PlayerController.Instance.PowerUpInvincible(false);
     }
 }

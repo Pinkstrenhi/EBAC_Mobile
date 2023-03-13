@@ -17,8 +17,6 @@ public class PowerUpSpeed : PowerUpBase
     protected override void PowerUpEnd()
     {
         base.PowerUpEnd();
-        PlayerController.Instance.SetPowerUpState("");
-        PlayerController.Instance.ResetPowerUpMaterial();
         PlayerController.Instance.ResetSpeed();
     }
 }

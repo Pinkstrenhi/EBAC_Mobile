@@ -20,5 +20,7 @@ public class PowerUpBase : CollectableBase
     protected virtual void PowerUpEnd()
     {
         Debug.Log("Power Up End");
+        PlayerController.Instance.SetPowerUpState("");
+        PlayerController.Instance.ResetPowerUpMaterial();
     }
 }

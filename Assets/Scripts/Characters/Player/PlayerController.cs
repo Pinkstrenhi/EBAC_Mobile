@@ -16,10 +16,12 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Power Up")] 
         public bool invincible;
         public TextMeshProUGUI powerUpState;
+        public GameObject collectorCoin;
         public Material powerUpMaterialBase;
         public Material powerUpMaterialSpeed;
         public Material powerUpMaterialInvincible;
         public Material powerUpMaterialFly;
+        public Material powerUpMaterialCoins;
     [Header("Lerp")] 
         public Transform target;
         public float lerpSpeed = 1f;
@@ -45,7 +47,7 @@ public class PlayerController : Singleton<PlayerController>
         _targetPosition.y = transform.position.y;
         _targetPosition.z = transform.position.z;
         transform.Translate(transform.forward * (speed * Time.deltaTime));
-        transform.position = Vector3.Lerp(transform.position,_targetPosition,lerpSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, _targetPosition, lerpSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -87,13 +89,13 @@ public class PlayerController : Singleton<PlayerController>
 
         #region Visual Reference
 
-            public void SetPowerUpState(string powerUpStateText)
+            public void SetPowerUpState(string text)
             {
-                powerUpState.text = powerUpStateText;
+                powerUpState.text = text;
             }
-            public void SetPowerUpMaterial(Material powerUpMaterialToChange)
+            public void SetPowerUpMaterial(Material material)
             {
-                gameObject.GetComponent<Renderer>().material = powerUpMaterialToChange;
+                gameObject.GetComponent<Renderer>().material = material;
             }
             public void ResetPowerUpMaterial()
             {
@@ -104,9 +106,9 @@ public class PlayerController : Singleton<PlayerController>
 
         #region Power Up Speed
 
-            public void PowerUpSpeed(float powerUpSpeed)
+            public void PowerUpSpeed(float amount)
             {
-                _currentSpeed = powerUpSpeed;
+                _currentSpeed = amount;
             }
             public void ResetSpeed()
             {
@@ -117,9 +119,9 @@ public class PlayerController : Singleton<PlayerController>
 
         #region Power Up Invincible
 
-            public void PowerUpInvincible(bool powerUpInvincible)
+            public void PowerUpInvincible(bool condition)
             {
-                invincible = powerUpInvincible;
+                invincible = condition;
             }
 
         #endregion
@@ -135,6 +137,15 @@ public class PlayerController : Singleton<PlayerController>
             public void ResetFly()
             {
                 transform.DOMoveY(_startPosition.y, 0.1f);
+            }
+
+        #endregion
+
+        #region Power Up Coins
+
+            public void PowerUpCoins(float amount)
+            {
+                collectorCoin.transform.localScale = Vector3.one * amount;
             }
 
         #endregion
