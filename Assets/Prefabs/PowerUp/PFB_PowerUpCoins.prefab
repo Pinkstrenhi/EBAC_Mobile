@@ -64,7 +64,7 @@ MonoBehaviour:
   timeToHide: 3
   graphicItem: {fileID: 2675123244646231374}
   audioSource: {fileID: 0}
-  duration: 3
+  duration: 1
   amountToCoins: 7
 --- !u!1 &2675123244646231374
 GameObject:
