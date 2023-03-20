@@ -30,7 +30,16 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Tags")]
         public string tagToCheckEnemy = "Enemy";
         public string tagToCheckFinishLine = "FinishLine";
+    [Header("Animation")] 
+        public ManagerAnimator managerAnimator;
 
+    /*private void Awake()
+    {
+        if (managerAnimator == null)
+        {
+            managerAnimator = GetComponentInChildren<ManagerAnimator>();
+        }
+    }*/
     private void Start()
     {
         _startPosition = transform.position;
@@ -58,7 +67,8 @@ public class PlayerController : Singleton<PlayerController>
             {
                 return;
             }
-            GameFinal();
+            MoveBackDead(other.transform);
+            GameFinal(ManagerAnimator.AnimationType.Dead);
         }
     }
 
@@ -70,19 +80,26 @@ public class PlayerController : Singleton<PlayerController>
             {
                 return;
             }
-            GameFinal();
+            GameFinal(ManagerAnimator.AnimationType.Idle);
         }
     }
 
-    private void GameFinal()
+    private void MoveBackDead(Transform moveTransform)
+    {
+        moveTransform.DOMoveZ(1f,0.3f).SetRelative();
+    }
+
+    private void GameFinal(ManagerAnimator.AnimationType animationType)
     {
         _canRun = false;
         sceneFinal.SetActive(true);
+        managerAnimator.Play(animationType);
     }
 
     public void StartToRun()
     {
         _canRun = true;
+        managerAnimator.Play(ManagerAnimator.AnimationType.Run);
     }
 
     #region Power Up

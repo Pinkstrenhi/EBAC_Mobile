@@ -1526,7 +1526,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839421767}
-  m_LocalRotation: {x: 0.19076759, y: -0.06584266, z: 0.012825615, w: 0.9793406}
+  m_LocalRotation: {x: 0.1907676, y: -0.06584262, z: 0.01282561, w: 0.9793406}
   m_LocalPosition: {x: 1.19, y: 3.6, z: -8.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1709,7 +1709,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19076759, y: -0.06584266, z: 0.012825615, w: 0.9793406}
+  m_LocalRotation: {x: 0.1907676, y: -0.06584262, z: 0.01282561, w: 0.9793406}
   m_LocalPosition: {x: 1.19, y: 3.6, z: -8.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2105,6 +2105,7 @@ MonoBehaviour:
   sceneFinal: {fileID: 413839586}
   tagToCheckEnemy: Enemy
   tagToCheckFinishLine: FinishLine
+  managerAnimator: {fileID: 1511964172}
 --- !u!1001 &1173015987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2415,6 +2416,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2764120914045579421, guid: 841900aedbf43754faff2719d8da9376, type: 3}
   m_PrefabInstance: {fileID: 2764120915295369159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1511964172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8474159557782565985, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 1373657509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d18e6e65bbdae8478f324e13a00e00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1519728541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,7 +3171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2675123243263320762, guid: 2f3820d81f19b6f42be09a8a9bc76cbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 2.68
       objectReference: {fileID: 0}
     - target: {fileID: 2675123243263320762, guid: 2f3820d81f19b6f42be09a8a9bc76cbb, type: 3}
       propertyPath: m_LocalPosition.y
