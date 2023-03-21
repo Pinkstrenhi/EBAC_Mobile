@@ -130,7 +130,10 @@ MonoBehaviour:
   setupAnimators:
   - animationType: 0
     animationTrigger: triggerIdle
+    speed: 1
   - animationType: 1
     animationTrigger: triggerRun
+    speed: 1
   - animationType: 2
     animationTrigger: triggerDead
+    speed: 1.5

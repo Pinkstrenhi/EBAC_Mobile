@@ -13,6 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _canRun;
     private float _currentSpeed;
     private Vector3 _startPosition;
+    private float _baseSpeedToAnimation = 5f;
     [Header("Power Up")] 
         public bool invincible;
         public TextMeshProUGUI powerUpState;
@@ -99,7 +100,8 @@ public class PlayerController : Singleton<PlayerController>
     public void StartToRun()
     {
         _canRun = true;
-        managerAnimator.Play(ManagerAnimator.AnimationType.Run);
+        managerAnimator.Play(ManagerAnimator.AnimationType.Run,
+            _currentSpeed / _baseSpeedToAnimation);
     }
 
     #region Power Up
