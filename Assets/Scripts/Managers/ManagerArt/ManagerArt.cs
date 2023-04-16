@@ -14,7 +14,7 @@ public class ManagerArt : Singleton<ManagerArt>
 
     public ArtSetup GetSetupByArtType(ArtType artType)
     {
-        return artSetups.ForEach(i => i.artType = artType);
+        return artSetups.Find(i => i.artType == artType);
     }
 }
 [System.Serializable]
