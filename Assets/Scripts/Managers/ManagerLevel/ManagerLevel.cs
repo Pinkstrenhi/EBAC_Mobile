@@ -75,6 +75,7 @@ public class ManagerLevel : MonoBehaviour
             CreateLevelPiecesStructure(_currentSetup.levelPieceNumberStart,_currentSetup.levelPieceStart);
             CreateLevelPiecesStructure(_currentSetup.levelPieceNumber,_currentSetup.levelPiece);
             CreateLevelPiecesStructure(_currentSetup.levelPieceNumberEnd,_currentSetup.levelPieceEnd);
+            ManagerColor.Instance.ChangeColorByType(_currentSetup.artType);
         }
         private void CleanSpawnedPieces()
         {
