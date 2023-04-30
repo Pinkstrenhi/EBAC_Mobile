@@ -19,7 +19,7 @@ public class ManagerLevel : MonoBehaviour
         public List<SO_LevelPiecesBase> soLevelPiecesBase;
         public float timeBetweenPieces = 0.3f;
 
-    private void Awake()
+    private void Start()
     {
         //SpawnLevel();
         CreateLevel();

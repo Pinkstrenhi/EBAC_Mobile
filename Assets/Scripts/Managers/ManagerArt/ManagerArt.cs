@@ -7,7 +7,8 @@ public class ManagerArt : Singleton<ManagerArt>
     public enum ArtType
     {
         Type01,
-        Type02
+        Type02,
+        Type03
     }
 
     public List<ArtSetup> artSetups;

@@ -687,6 +687,10 @@ MonoBehaviour:
     colors:
     - {r: 0.058823522, g: 0.3756024, b: 0.83137256, a: 0}
     - {r: 0.74509805, g: 0.07843138, b: 0.37779865, a: 0}
+  - artType: 2
+    colors:
+    - {r: 0.6657415, g: 0.058823522, b: 0.83137256, a: 0}
+    - {r: 0.8274831, g: 0.9811321, b: 0.95524585, a: 0}
 --- !u!1001 &616995172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1620,12 +1624,14 @@ MonoBehaviour:
   levels:
   - {fileID: 1388731775098047600, guid: 65468784295562e4bb05a2b2e4b034d4, type: 3}
   - {fileID: 1388731775098047600, guid: fb10e9ffb9953c9458a60cc5b9dc5624, type: 3}
+  - {fileID: 1388731775098047600, guid: 9b9810ed963120741b333cf714ce8038, type: 3}
   levelPosition: {fileID: 1255540290}
   _spawnedPieces: []
   _levelIndex: 0
   soLevelPiecesBase:
   - {fileID: 11400000, guid: 92170116f4dcf44468021086b6c72c81, type: 2}
   - {fileID: 11400000, guid: 6a910394a3989ba4ebd554070022b639, type: 2}
+  - {fileID: 11400000, guid: 5fc760ddad458164db6ce876caccbf40, type: 2}
   timeBetweenPieces: 0.3
 --- !u!4 &1156703635
 Transform:
@@ -1934,6 +1940,8 @@ MonoBehaviour:
     gameObject: {fileID: 1721133675842095901, guid: bd4b4176f33af564ca90a5c72215da94, type: 3}
   - artType: 1
     gameObject: {fileID: 5895954436085116994, guid: d4624667a04e0aa468b118730359babb, type: 3}
+  - artType: 2
+    gameObject: {fileID: 2556910932638604869, guid: 77cc3d9fec8c3a24f865cdbc772a005b, type: 3}
 --- !u!1 &2077223049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6677173059941411236, guid: 418799f74c2595f419dc592a1a790c49, type: 3}
