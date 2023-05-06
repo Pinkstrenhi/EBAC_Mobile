@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class ManagerLevel : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class ManagerLevel : MonoBehaviour
     [Header("Pieces")] 
         public List<SO_LevelPiecesBase> soLevelPiecesBase;
         public float timeBetweenPieces = 0.3f;
+    [Header("Scale")] 
+        public float durationScale = 0.2f;
+        public float timeToWaitScale = 0.1f;
+        public Ease ease = Ease.OutBack;
+        
 
     private void Start()
     {
@@ -76,6 +82,7 @@ public class ManagerLevel : MonoBehaviour
             CreateLevelPiecesStructure(_currentSetup.levelPieceNumber,_currentSetup.levelPiece);
             CreateLevelPiecesStructure(_currentSetup.levelPieceNumberEnd,_currentSetup.levelPieceEnd);
             ManagerColor.Instance.ChangeColorByType(_currentSetup.artType);
+            StartCoroutine(nameof(ScalePieces));
         }
         private void CleanSpawnedPieces()
         {
@@ -108,6 +115,24 @@ public class ManagerLevel : MonoBehaviour
             }
             _spawnedPieces.Add(spawnedPiece);
         }
+
+    #endregion
+
+    #region Scale
+
+    private IEnumerator ScalePieces()
+    {
+        foreach (var piece in _spawnedPieces)
+        {
+            piece.transform.localScale = Vector3.zero;
+        }
+        yield return null;
+        for (var i = 0; i < _spawnedPieces.Count; i++)
+        {
+            _spawnedPieces[i].transform.DOScale(1, durationScale).SetEase(ease);
+            yield return new WaitForSeconds(timeToWaitScale);
+        }
+    }
 
     #endregion
 }
