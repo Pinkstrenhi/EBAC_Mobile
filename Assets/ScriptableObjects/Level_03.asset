@@ -18,6 +18,7 @@ MonoBehaviour:
   levelPiece:
   - {fileID: 5342374183783609348, guid: 52a96c31d9513eb4aaec47c5ca1913d1, type: 3}
   - {fileID: 2711288134009411966, guid: 8102c9c7ff5e23840bfac9fd63dfd881, type: 3}
+  - {fileID: 2711288134009411966, guid: 43c125faf0dc4e24d8abac464c17dd94, type: 3}
   levelPieceEnd:
   - {fileID: 5342374183783609348, guid: c58483313303a80478edc81686a75914, type: 3}
   levelPieceNumberStart: 5
