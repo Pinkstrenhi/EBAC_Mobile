@@ -132,6 +132,7 @@ public class ManagerLevel : MonoBehaviour
             _spawnedPieces[i].transform.DOScale(1, durationScale).SetEase(ease);
             yield return new WaitForSeconds(timeToWaitScale);
         }
+        ManagerAnimatorCoins.Instance.StartScale();
     }
 
     #endregion

@@ -9,6 +9,12 @@ public class CollectableBaseCoin : CollectableBase
     public bool collect = false;
     public float lerp;
     public float minDistance;
+
+    private void Start()
+    {
+        ManagerAnimatorCoins.Instance.RegisterCoin(this);
+    }
+
     protected override void OnCollect()
     {
         base.OnCollect();
