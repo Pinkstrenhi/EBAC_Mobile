@@ -10,6 +10,7 @@ public class PowerUpBase : CollectableBase
     {
         base.OnCollect();
         PowerUpStart();
+        PlayerController.Instance.Bounce();
     }
 
     protected virtual void PowerUpStart()

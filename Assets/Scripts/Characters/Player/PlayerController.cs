@@ -34,6 +34,7 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")] 
         public ManagerAnimator managerAnimator;
         [SerializeField] private BounceHelper _bounceHelper;
+        
     /*private void Awake()
     {
         if (managerAnimator == null)
@@ -46,6 +47,7 @@ public class PlayerController : Singleton<PlayerController>
         _startPosition = transform.position;
         powerUpMaterialBase = gameObject.GetComponent<Renderer>().material;
         ResetSpeed();
+        BounceGrow();
     }
     private void Update()
     {
@@ -178,6 +180,13 @@ public class PlayerController : Singleton<PlayerController>
             if (_bounceHelper != null)
             {
                 _bounceHelper.Bounce();
+            }
+        }
+        public void BounceGrow()
+        {
+            if (_bounceHelper != null)
+            {
+                _bounceHelper.BounceGrow();
             }
         }
 

@@ -9,8 +9,9 @@ public class BounceHelper : MonoBehaviour
     [Header("Animation")]
         public float durationScale = 0.2f;
         public float bounceScale = 1.2f;
+        public float bounceGrow = 1f;
+        public float durationGrow = 0.8f;
         public Ease ease = Ease.OutBack;
-
     /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -21,5 +22,10 @@ public class BounceHelper : MonoBehaviour
     public void Bounce()
     {
         transform.DOScale(bounceScale,durationScale).SetEase(ease).SetLoops(2, LoopType.Yoyo);
+    }
+    public void BounceGrow()
+    {
+        transform.localScale = Vector3.zero;
+        transform.DOScale(bounceGrow,durationGrow).SetEase(ease);
     }
 }
