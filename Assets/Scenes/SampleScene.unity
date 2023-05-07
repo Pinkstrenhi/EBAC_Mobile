@@ -1510,6 +1510,7 @@ GameObject:
   - component: {fileID: 1137504926}
   - component: {fileID: 1137504930}
   - component: {fileID: 1137504931}
+  - component: {fileID: 1137504932}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1641,6 +1642,22 @@ MonoBehaviour:
   tagToCheckEnemy: Enemy
   tagToCheckFinishLine: FinishLine
   managerAnimator: {fileID: 1511964172}
+  _bounceHelper: {fileID: 1137504932}
+--- !u!114 &1137504932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137504924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64c3381755e94a488f084e319e0909c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationScale: 0.2
+  bounceScale: 1.2
+  ease: 1
 --- !u!1 &1156703633
 GameObject:
   m_ObjectHideFlags: 0

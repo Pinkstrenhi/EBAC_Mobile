@@ -33,7 +33,7 @@ public class PlayerController : Singleton<PlayerController>
         public string tagToCheckFinishLine = "FinishLine";
     [Header("Animation")] 
         public ManagerAnimator managerAnimator;
-
+        [SerializeField] private BounceHelper _bounceHelper;
     /*private void Awake()
     {
         if (managerAnimator == null)
@@ -168,6 +168,18 @@ public class PlayerController : Singleton<PlayerController>
             }
 
         #endregion
+
+    #endregion
+
+    #region Bounce
+
+        public void Bounce()
+        {
+            if (_bounceHelper != null)
+            {
+                _bounceHelper.Bounce();
+            }
+        }
 
     #endregion
 }
