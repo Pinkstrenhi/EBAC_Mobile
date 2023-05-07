@@ -15,6 +15,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/ManagerArt/ManagerArt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/ManagerColor/ManagerColor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/BounceHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/ColorChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/LoadSceneHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.15.16/Editor/Collaborate/Views/StartPageView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.6.4/Editor/Shortcuts.cs" root0="SKIP_HIGHLIGHTING" />
@@ -122,7 +123,8 @@
       <workItem from="1682824771327" duration="663000" />
       <workItem from="1683201740036" duration="916000" />
       <workItem from="1683396271972" duration="5487000" />
-      <workItem from="1683482761038" duration="1133000" />
+      <workItem from="1683482761038" duration="1896000" />
+      <workItem from="1683485147765" duration="1698000" />
     </task>
     <servers />
   </component>
