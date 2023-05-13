@@ -37,6 +37,8 @@ public class PlayerController : Singleton<PlayerController>
         [SerializeField] private BounceHelper _bounceHelper;
     [Header("VFX")] 
         public ParticleSystem vfxDead;
+    [Header("Limits")]  
+        public Vector2 limit = new Vector2(-4,4);
 
         /*private void Awake()
         {
@@ -61,6 +63,14 @@ public class PlayerController : Singleton<PlayerController>
         _targetPosition = target.position;
         _targetPosition.y = transform.position.y;
         _targetPosition.z = transform.position.z;
+        if (_targetPosition.x < limit.x)
+        {
+            _targetPosition.x = limit.x;
+        }
+        else if (_targetPosition.x > limit.y)
+        {
+            _targetPosition.x = limit.y;
+        }
         transform.Translate(transform.forward * (speed * Time.deltaTime));
         transform.position = Vector3.Lerp(transform.position, _targetPosition, lerpSpeed * Time.deltaTime);
     }
