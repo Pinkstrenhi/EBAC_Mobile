@@ -5,6 +5,7 @@ using UnityEngine;
 using Core.Singleton;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -34,14 +35,16 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")] 
         public ManagerAnimator managerAnimator;
         [SerializeField] private BounceHelper _bounceHelper;
-        
-    /*private void Awake()
-    {
-        if (managerAnimator == null)
+    [Header("VFX")] 
+        public ParticleSystem vfxDead;
+
+        /*private void Awake()
         {
-            managerAnimator = GetComponentInChildren<ManagerAnimator>();
-        }
-    }*/
+            if (managerAnimator == null)
+            {
+                managerAnimator = GetComponentInChildren<ManagerAnimator>();
+            }
+        }*/
     private void Start()
     {
         _startPosition = transform.position;
@@ -97,6 +100,10 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         sceneFinal.SetActive(true);
         managerAnimator.Play(animationType);
+        if (vfxDead != null)
+        {
+            vfxDead.Play();
+        }
     }
 
     public void StartToRun()
