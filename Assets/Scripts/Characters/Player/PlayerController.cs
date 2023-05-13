@@ -37,6 +37,7 @@ public class PlayerController : Singleton<PlayerController>
         [SerializeField] private BounceHelper _bounceHelper;
     [Header("VFX")] 
         public ParticleSystem vfxDead;
+        public ParticleSystem vfxWin;
     [Header("Limits")]  
         public Vector2 limit = new Vector2(-4,4);
 
@@ -84,7 +85,7 @@ public class PlayerController : Singleton<PlayerController>
                 return;
             }
             MoveBackDead(other.transform);
-            GameFinal(ManagerAnimator.AnimationType.Dead);
+            GameFinal(ManagerAnimator.AnimationType.Dead, vfxDead);
         }
     }
 
@@ -92,11 +93,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.CompareTag(tagToCheckFinishLine))
         {
-            if (invincible)
+            /*if (invincible)
             {
                 return;
-            }
-            GameFinal(ManagerAnimator.AnimationType.Idle);
+            }*/
+            GameFinal(ManagerAnimator.AnimationType.Idle, vfxWin);
         }
     }
 
@@ -105,14 +106,14 @@ public class PlayerController : Singleton<PlayerController>
         moveTransform.DOMoveZ(1f,0.3f).SetRelative();
     }
 
-    private void GameFinal(ManagerAnimator.AnimationType animationType)
+    private void GameFinal(ManagerAnimator.AnimationType animationType, ParticleSystem vfx)
     {
         _canRun = false;
         sceneFinal.SetActive(true);
         managerAnimator.Play(animationType);
-        if (vfxDead != null)
+        if (vfx != null)
         {
-            vfxDead.Play();
+            vfx.Play();
         }
     }
 
